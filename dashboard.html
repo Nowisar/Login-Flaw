@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="/static/style.css">
+
+<h1>Dashboard 🏠</h1>
+
+<p>Welcome, <strong>{{ session.name }}</strong> 👋</p>
+<p>Email: {{ session.email }}</p>
+<p>Role: <strong>{{ session.role }}</strong></p>
+
+<div>
+    {% if session.role == "Admin" %}
+        <a href="/admin">Admin Panel 👑</a><br>
+    {% elif session.role == "Manager" %}
+        <a href="/manager">Manager Panel 📊</a><br>
+    {% elif session.role == "User" %}
+        <a href="/user">User Panel 👤</a><br>
+    {% endif %}
+
+    <a href="/profile">My Profile</a><br>
+    <a href="/api/token">Show My JWT Token (Demo) 🪙</a><br>
+
+    <a href="/logout" style="background: #ef4444; margin-top: 20px; display: inline-block;">
+        Logout 🚪
+    </a>
+</div>

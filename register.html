@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="/static/style.css">
+
+<h2>Register ✍️</h2>
+
+{% if error %}
+<p style="color: #ef4444;">⚠️ {{ error }}</p>
+{% endif %}
+
+<form method="POST" action="/register">
+    <input type="text"     name="name"     placeholder="Full Name"><br>
+    <input type="email"    name="email"    placeholder="Email"><br>
+    <input type="password" name="password" placeholder="Password"><br>
+
+    <select name="role">
+        <option value="User">User</option>
+        <option value="Manager">Manager</option>
+        <option value="Admin">Admin</option>
+    </select><br>
+
+    <button type="submit">Register</button>
+</form>
+
+<a href="/login" style="background: #64748b; margin-top: 10px; display: inline-block;">
+    Already have an account? Login
+</a>

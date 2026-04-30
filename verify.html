@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="/static/style.css">
+
+{% if is_new %}
+    <h2>Almost there! Scan QR Code First 📷</h2>
+    <p>افتح Google Authenticator أو Authy وسكن الـ QR ده:</p>
+    <img src="/static/qrcode_{{ qr_email }}.png" width="200"><br>
+    <p>بعد ما تسكنه، هيظهرلك كود 6 أرقام — اكتبه جوا</p>
+{% else %}
+    <h2>Two-Factor Authentication 🔐</h2>
+    <p>افتح الـ authenticator app وادخل الكود</p>
+{% endif %}
+
+{% if error %}
+<p style="color: #ef4444; margin: 10px 0;">⚠️ {{ error }}</p>
+{% endif %}
+
+<form method="POST">
+    <input name="code" placeholder="Enter 6-digit code" maxlength="6"><br>
+    <button>Verify & Login</button>
+</form>
+
+<a href="/login" style="background: #64748b; margin-top: 10px; display: inline-block;">
+    ← Back to Login
+</a>

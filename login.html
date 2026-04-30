@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="/static/style.css">
+
+<h2>Login 🔑</h2>
+
+{% if error %}
+<p style="color: #ef4444;">⚠️ {{ error }}</p>
+{% endif %}
+
+<form method="POST">
+    <input name="email" type="email" placeholder="Email"><br>
+    <input name="password" type="password" placeholder="Password"><br>
+    <button>Login</button>
+</form>
+
+<a href="/register" style="background: #64748b; margin-top: 10px; display: inline-block;">
+    Don't have an account? Register
+</a>
